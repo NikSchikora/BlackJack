@@ -86,13 +86,6 @@ public class BlackJack {
         }
     }
 
-
-    public void test(){
-        System.out.println("Test");
-    }
-
-
-
     //Method for player creation
     private static void createPlayers() {
         String name = "";
@@ -276,39 +269,6 @@ public class BlackJack {
             System.out.println("\n" +
                     "\n");
             int deckValue = player.getHand().getDeckValue();
-
-
-            /*
-            if(deckValue > 21) {
-                System.out.println(player.getName() + " hat diese Runde verloren und verliert " + player.getBet() + " DH$");
-                System.out.println(player.getName() + "'s neuer Kontostand: " + player.getBalance() + "DH$ (-" + player.getBet() + "DH$)");
-            } else {
-                if(dealerValue < deckValue) {
-                    System.out.println(player.getName() + " hat gegen den Dealer gewonnen und erhält " + (player.getBet()*2) + " DH$.");
-                    player.setBalance(player.getBalance() + (player.getBet()*2));
-                    System.out.println(player.getName() + "'s neuer Kontostand: " + player.getBalance() + "DH$ (+" + player.getBet() + "DH$)");
-                }
-                if(dealerValue > deckValue && dealerValue <= 21) {
-                    System.out.println(player.getName() + " hat gegen den Dealer verloren und verliert " + player.getBet() + " DH$");
-                    System.out.println(player.getName() + "'s neuer Kontostand: " + player.getBalance() + "DH$ (-" + player.getBet() + "DH$)");
-                }
-                if(dealerValue == deckValue) {
-                    if(dealerValue == 21) {
-                        if(player.getHand().isTrippleSeven() && !(dealer.getHand().isTrippleSeven())) {
-                            System.out.println("Du hast gegen den Dealer gewonnen! Du erhälst " + (player.getBet() *2) + "DH$.");
-                            player.setBalance(player.getBet()*2);
-                        } else if(player.getHand().isTrippleSeven() && dealer.getHand().isTrippleSeven()) {
-                            System.out.println(player.getName() + "Hat ein Unentschieden erspielt: er erhält seinen Einsatz zurück!");
-                            player.setBalance(player.getBalance() + player.getBet());
-                        } else {
-                            System.out.println(player.getName() + "Du hat gegen den Dealer verloren, er verliert " + player.getBet() + " DH$");
-                        }
-                    }
-                    System.out.println("Unentschieden: " + player.getName() + " erhält seinen Einsatz zurück!");
-                    player.setBalance(player.getBalance() + player.getBet());
-                }
-            }
-            */
 
             if(dealerValue <= 21) {
                 if(deckValue < dealerValue) {
