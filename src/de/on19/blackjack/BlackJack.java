@@ -116,6 +116,7 @@ public class BlackJack {
             Player player = new Player(name, age);
             players.add(player);
             System.out.println("Der Spieler " + name + " wurde erfolgreich hinzugefügt!");
+            gamelog.info("INF > added player " + player.getName());
             playerCount--;
             tmpCount++;
             pauseGame(2000);
