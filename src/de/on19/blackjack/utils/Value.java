@@ -14,7 +14,8 @@ public enum Value {
     JACK(10),
     QUEEN(10),
     KING(10),
-    ACE(11);
+    ACE(11),
+    SUPERACE(20);
 
     private Integer cardValue;
 
