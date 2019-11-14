@@ -70,6 +70,7 @@ public class BlackJack {
             cardRound();
             evaluateBets();
             resetValues();
+            gamelog.info("INF > A Round was completed!");
         }
 
     }
@@ -84,6 +85,7 @@ public class BlackJack {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+        gamelog.info("INF > Game paused for " + millis + " milliseconds!");
     }
 
     //Method for player creation
@@ -177,14 +179,17 @@ public class BlackJack {
         for(int i = 0; i < 2; i++) {
             for (Player player : players) {
                 player.getHand().addCard(playingDeck.getCard());
+                gamelog.info("INF > A card was added to the hand of player " + player.getName());
             }
             dealer.getHand().addCard(playingDeck.getCard());
+            gamelog.info("INF > A card was added to the hand of the dealer");
         }
         //Display of the card distribution -> Info
         System.out.println("Die Kartenverteilung");
         for(Player player : players) {
             System.out.println(player.getName() + ": ");
             CardViewer.displayDeck(player.getHand());
+            gamelog.info("INF > Card Deck of player " + player.getName() + " has been displayed!");
             System.out.println("\n");
             pauseGame(3000);
         }
@@ -309,6 +314,7 @@ public class BlackJack {
             if(player.getBalance() <= 0) {
                 System.out.println(players.size());
                 System.out.println("Der Spieler " + player.getName() + " wurde wegen zu wenig Guthaben aus dem Spiel entfernt!");
+                gamelog.info("INF > The player " + player.getName() + " was removed from the game due to insufficient balance!");
                 pauseGame(3000);
             }
         }
@@ -318,6 +324,7 @@ public class BlackJack {
             Player itPlayer = it.next();
             if(itPlayer.getBalance() <= 0) {
                 it.remove();
+                gamelog.info("INF > Player was removed");
             }
         }
 
@@ -356,6 +363,7 @@ public class BlackJack {
             dealer.getHand().getCards().clear();
             dealerValue = 0;
         }
+        gamelog.info("INF > All player values have been reset!");
     }
 
 
