@@ -186,14 +186,17 @@ public class BlackJack {
         for(int i = 0; i < 2; i++) {
             for (Player player : players) {
                 player.getHand().addCard(playingDeck.getCard());
+                gamelog.info("INF > A card was added to the hand of player " + player.getName());
             }
             dealer.getHand().addCard(playingDeck.getCard());
+            gamelog.info("INF > A card was added to the hand of the dealer");
         }
         //Display of the card distribution -> Info
         System.out.println("Die Kartenverteilung");
         for(Player player : players) {
             System.out.println(player.getName() + ": ");
             CardViewer.displayDeck(player.getHand());
+            gamelog.info("INF > Card Deck of player " + player.getName() + " has been displayed!");
             System.out.println("\n");
             pauseGame(3000);
         }
@@ -400,6 +403,7 @@ public class BlackJack {
             dealer.getHand().getCards().clear();
             dealerValue = 0;
         }
+        gamelog.info("INF > All player values have been reset!");
     }
 
 
