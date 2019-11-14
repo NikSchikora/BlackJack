@@ -70,6 +70,7 @@ public class BlackJack {
             cardRound();
             evaluateBets();
             resetValues();
+            gamelog.info("INF > A Round was completed!");
         }
 
     }
@@ -84,6 +85,7 @@ public class BlackJack {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+        gamelog.info("INF > Game paused for " + millis + " milliseconds!");
     }
 
 
@@ -349,6 +351,7 @@ public class BlackJack {
             if(player.getBalance() <= 0) {
                 System.out.println(players.size());
                 System.out.println("Der Spieler " + player.getName() + " wurde wegen zu wenig Guthaben aus dem Spiel entfernt!");
+                gamelog.info("INF > The player " + player.getName() + " was removed from the game due to insufficient balance!");
                 pauseGame(3000);
             }
         }
@@ -358,6 +361,7 @@ public class BlackJack {
             Player itPlayer = it.next();
             if(itPlayer.getBalance() <= 0) {
                 it.remove();
+                gamelog.info("INF > Player was removed");
             }
         }
 
