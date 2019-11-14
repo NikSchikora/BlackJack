@@ -4,15 +4,21 @@ import de.on19.blackjack.cardmanager.Card;
 import de.on19.blackjack.cardmanager.Deck;
 import de.on19.blackjack.viewer.CardViewer;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Scanner;
+import java.util.logging.FileHandler;
+import java.util.logging.Logger;
+import java.util.logging.SimpleFormatter;
 
 public class BlackJack {
 
     /*
     Declaration of game relevant variables
      */
+
+    private static Logger gamelog;
 
     private static ArrayList<Player> players;
     private static Integer playerCount;
@@ -28,6 +34,17 @@ public class BlackJack {
      */
     public static void main(String[] args) {
         runGame = true;
+        gamelog = Logger.getLogger("gamelog");
+        FileHandler handler;
+        try {
+            handler = new FileHandler("/log/game.log");
+            gamelog.addHandler(handler);
+            SimpleFormatter formatter = new SimpleFormatter();
+            handler.setFormatter(formatter);
+            gamelog.info("Logger was successfully added!");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         //initializing variables
         players = new ArrayList<>();
@@ -44,6 +61,7 @@ public class BlackJack {
             System.out.println("Die Spieleranzahl wurde auf 8 gesetzt.");
             playerCount = 8;
         }
+        gamelog.info("SET > playerCount = 8");
         createPlayers();
 
         //Game-Loop: While-loop with game relevant methods
@@ -111,6 +129,7 @@ public class BlackJack {
         System.out.println("Alle Spieler wurden hinzugefügt!");
         pauseGame(2000);
         clearConsole();
+        gamelog.info("ADD > all players added");
     }
 
 
@@ -147,6 +166,7 @@ public class BlackJack {
         for(Player player : players) {
             System.out.println(player.getName() + "   :  " + player.getBet());
         }
+        gamelog.info("FNS > bet round finished successfully");
     }
 
 
@@ -241,6 +261,7 @@ public class BlackJack {
         }
         System.out.println("Der finale Kartenwert des Dealers: " + dealer.getHand().getDeckValue());
         pauseGame(3000);
+        gamelog.info("FNS > card round finished successfully");
     }
 
 
@@ -360,7 +381,7 @@ public class BlackJack {
             System.out.println("Diese Runde ist vorbei. Die nächste Runde beginnt in Kürze");
             pauseGame(10000);
         }
-
+        gamelog.info("FNS > bets evaluated successfully");
     }
 
 
