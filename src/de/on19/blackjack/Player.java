@@ -21,10 +21,6 @@ public class Player {
         return this.name;
     }
 
-    public Integer getAge() {
-        return this.age;
-    }
-
     public double getBalance() {
         return this.balance;
     }

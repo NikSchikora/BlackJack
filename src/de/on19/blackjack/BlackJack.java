@@ -352,9 +352,6 @@ public class BlackJack {
         gamelog.info("FNS > bets evaluated successfully");
     }
 
-
-
-
     private static void resetValues() {
         if(!players.isEmpty()) {
             for (Player player : players) {
@@ -366,8 +363,6 @@ public class BlackJack {
         }
         gamelog.info("INF > All player values have been reset!");
     }
-
-
 
 
     //Clearing the console
