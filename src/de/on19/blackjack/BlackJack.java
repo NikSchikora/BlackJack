@@ -275,6 +275,7 @@ public class BlackJack {
 
 
     private static void evaluateBets() {
+        gamelog.info("INF > Started evaluation of the bets");
         //Iterating players again to distribute the bets
         dealerValue = dealer.getHand().getDeckValue();
         for(Player player : players) {
@@ -389,12 +390,14 @@ public class BlackJack {
             pauseGame(10000);
         }
         gamelog.info("FNS > bets evaluated successfully");
+        gamelog.info("INF > Going to reset the values");
     }
 
 
 
 
     private static void resetValues() {
+        gamelog.info("INF > Reset the values");
         if(!players.isEmpty()) {
             for (Player player : players) {
                 player.setBet(0);
