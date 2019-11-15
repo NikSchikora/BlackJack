@@ -46,6 +46,8 @@ public class BlackJack {
             e.printStackTrace();
         }
 
+        gamelog.info("INF > Logger initialized and started game");
+
         //initializing variables
         players = new ArrayList<>();
         dealerValue = 0;
@@ -417,6 +419,7 @@ public class BlackJack {
         for(int i = 0; i < 50; i++) {
             System.out.println(" \n");
         }
+        gamelog.info("INF > Cleared console");
     }
 
 
