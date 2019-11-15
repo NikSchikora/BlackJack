@@ -287,14 +287,14 @@ public class BlackJack {
                     System.out.println(player.getName() + " hat gegen den Dealer gewonnen und erhält " + (player.getBet() *2) + "DH$.");
                     player.setBalance(player.getBalance() + player.getBet()*2);
                 } else if(dealerValue == deckValue) {
-                    System.out.println("Unentschieden: " + player.getName() + " erhält seinen Einsatz zurück!");
+                    System.out.println("Unentschieden: " + player.getName() + " erhält die gesetzten DH$ zurück!");
                     player.setBalance(player.getBalance() + player.getBet());
                 } else if(dealerValue == 21 && deckValue == 21) {
                     if(player.getHand().isTrippleSeven() && !(dealer.getHand().isTrippleSeven())) {
                         System.out.println(player.getName() + " hat gegen den Dealer gewonnen und erhält " + (player.getBet() *2) + "DH$.");
                         player.setBalance(player.getBet()*2);
                     } else if(player.getHand().isTrippleSeven() && dealer.getHand().isTrippleSeven()) {
-                        System.out.println("Unentschieden: " + player.getName() + " erhält seinen Einsatz zurück!");
+                        System.out.println("Unentschieden: " + player.getName() + " erhält die gesetzten DH$ zurück!");
                         player.setBalance(player.getBalance() + player.getBet());
                     } else {
                         System.out.println(player.getName() + " hat diese Runde verloren und verliert " + player.getBet() + " DH$");
