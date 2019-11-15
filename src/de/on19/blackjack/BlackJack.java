@@ -46,6 +46,8 @@ public class BlackJack {
             e.printStackTrace();
         }
 
+        gamelog.info("INF > Logger initialized and started game");
+
         //initializing variables
         players = new ArrayList<>();
         dealerValue = 0;
@@ -269,6 +271,7 @@ public class BlackJack {
 
 
     private static void evaluateBets() {
+        gamelog.info("INF > Started evaluation of the bets");
         //Iterating players again to distribute the bets
         dealerValue = dealer.getHand().getDeckValue();
         for(Player player : players) {
@@ -350,12 +353,14 @@ public class BlackJack {
             pauseGame(10000);
         }
         gamelog.info("FNS > bets evaluated successfully");
+        gamelog.info("INF > Going to reset the values");
     }
 
 
 
 
     private static void resetValues() {
+        gamelog.info("INF > Reset the values");
         if(!players.isEmpty()) {
             for (Player player : players) {
                 player.setBet(0);
@@ -375,6 +380,7 @@ public class BlackJack {
         for(int i = 0; i < 50; i++) {
             System.out.println(" \n");
         }
+        gamelog.info("INF > Cleared console");
     }
 
 
