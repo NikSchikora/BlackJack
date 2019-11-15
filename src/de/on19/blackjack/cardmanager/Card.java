@@ -21,4 +21,12 @@ public class Card {
         return this.value;
     }
 
+    public void setValue(Value v) {
+        this.value = v;
+    }
+
+    public void setColor(Color c) {
+        this.color = c;
+    }
+
 }
