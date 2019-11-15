@@ -356,9 +356,6 @@ public class BlackJack {
         gamelog.info("INF > Going to reset the values");
     }
 
-
-
-
     private static void resetValues() {
         gamelog.info("INF > Reset the values");
         if(!players.isEmpty()) {
@@ -371,8 +368,6 @@ public class BlackJack {
         }
         gamelog.info("INF > All player values have been reset!");
     }
-
-
 
 
     //Clearing the console
