@@ -335,7 +335,7 @@ public class BlackJack {
             System.out.println("Alle Spieler sind aus dem Spiel entfernt. Möchtet ihr noch eine Runde Spielen dann schreibt start in die Konsole!");
             switch (scanner.next().toLowerCase()) {
                 case "start":
-                    System.out.println("Here we go again!");
+                    System.out.println("Das Spiel startet erneut! Viel Spaß und danke fürs Spielen!");
                     BlackJack.main(null);
                     break;
                 default:
