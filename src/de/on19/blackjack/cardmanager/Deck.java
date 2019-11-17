@@ -36,7 +36,7 @@ public class Deck {
         for(Card c : this.cards) {
             deckValue += c.getValue().getCardValue();
         }
-        if(deckValue > 21) {
+        if(deckValue > 21) {                //Sonderregel Ass, kann als eins oder elf gewertet werden
             for(Card c : cards) {
                 if(c.getValue().equals(Value.ACE) && (deckValue > 21)) {
                     deckValue -= 10;
@@ -73,7 +73,7 @@ public class Deck {
 
 
 
-    public boolean isTrippleSeven() {
+    public boolean isTrippleSeven() {       //Sonderregel, drei mal Sieben gewinnt immer
         for(Card c : this.getCards()) {
             if(c.getValue() != Value.SEVEN) {
                 return false;

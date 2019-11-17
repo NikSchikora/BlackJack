@@ -9,7 +9,7 @@ public class Player {
     private double balance, bet;
     private Deck hand;
 
-    public Player(String name, Integer age) {
+    public Player(String name, Integer age) {       //Konstruktor, Objekte werden nach Erzeugung in gültigen Zustand versetzt
         this.name = name;
         this.age = age;
         this.balance = 500.00;
